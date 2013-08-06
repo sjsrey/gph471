@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapping with Leaflet!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://leafletjs.com/dist/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://leafletjs.com/dist/leaflet.ie.css" /><![endif]-->
+</head>
+<body>
+    <div id="map" style="width: 800px; height: 600px"></div>
+    <script src="http://leafletjs.com/dist/leaflet.js"></script>
+    <script>
+       
+    var map = L.map('map').setView([33.4193, -111.9373], 11);
+       
+    var mapboxUrl = 'http://a.tiles.mapbox.com/v3/krdyke.map-4s0hcgwp/{z}/{x}/{y}.png';
+    var mapbox = new L.TileLayer(mapboxUrl,{
+         maxZoom:18,
+         attribution:'Map imagery from Mapbox and &copy OpenStreetMap',
+         subdomains:['a','b','c','d']
+        });
+     
+    map.addLayer(mapbox);
+     
+    </script>
+</body>
+</html>
